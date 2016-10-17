@@ -5,9 +5,10 @@ layout: default
 <h1>Оглавление</h1>
 
 <div class="posts">
+	<ul>
 
   {% for page in site.book %}
-      <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+      <li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
   {% endfor %}
-
+  	</ul>
 </div>
