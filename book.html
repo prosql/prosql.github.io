@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="posts">
+
+  {% for page in site.book %}
+    <article class="post">
+
+      <h1><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h1>
+
+    </article>
+  {% endfor %}
+
+
+</div>
