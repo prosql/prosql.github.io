@@ -9,5 +9,9 @@ layout: default
     {{ content }}
   </div>
 
+  <div>
+    <a href="{{ page.previous }}">Назад</a> <a href="{{ page.next }}">Дальше</a>
+  </div>
+
   {% include disqus.html %}
 </article>
