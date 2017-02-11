@@ -10,7 +10,7 @@ layout: default
   </div>
 
   <div>
-    <a href="{{ page.previous }}">Назад</a> <a href="{{ page.next }}">Дальше</a>
+    <a href="{{ paginator.previous_page_path }}">Назад</a> <a href="{{ paginator.next_page_path }}">Дальше</a>
   </div>
 
   {% include disqus.html %}
