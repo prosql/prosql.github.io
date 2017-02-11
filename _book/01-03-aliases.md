@@ -5,11 +5,11 @@ title: Псевдонимы
 
 Выводимым данным можно присвоить псевдонимы
 
- 	SELECT 'Елена' AS first_name
+  SELECT 'Елена' AS first_name
 
 выведет текст `Елена`, озаглавленный `first_name`
 
-	 SELECT 'Елена' AS first_name, 18 AS age
+	SELECT 'Елена' AS first_name, 18 AS age
 
 выведет текст `Елена`, озаглавленный `first_name`,	и число `18`, озаглавленное `age`.
 
