@@ -13,5 +13,9 @@ layout: default
     Опубликовано {{ page.date | date: "%d.%m.%Y" }}
   </div>
 
+  <div>
+    {{ page.previous }} {{ page.next }}
+  </div>
+
   {% include disqus.html %}
 </article>
