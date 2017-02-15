@@ -76,3 +76,41 @@ title: Группировка
     GROUP BY
       aircrafts.model,
       flights.flight_no
+
+Помните, мы выводили все места в самолёте:
+
+	SELECT
+		aircrafts.model,
+		seats.seat_no
+	FROM
+		bookings.aircrafts
+		JOIN bookings.seats
+			ON seats.aircraft_code = aircrafts.aircraft_code
+	WHERE
+		aircrafts.model = 'Airbus A321-200'
+
+Давайте их посчитаем:
+
+	SELECT
+		aircrafts.model,
+		COUNT(seats.seat_no) seats_count
+	FROM
+		bookings.aircrafts
+		JOIN bookings.seats
+			ON seats.aircraft_code = aircrafts.aircraft_code
+	WHERE
+		aircrafts.model = 'Airbus A321-200'
+	GROUP BY
+		aircrafts.model
+
+А для всех моделёй самолётов?
+
+	SELECT
+		aircrafts.model,
+		COUNT(seats.seat_no) "Мест"
+	FROM
+		bookings.aircrafts
+		JOIN bookings.seats
+			ON seats.aircraft_code = aircrafts.aircraft_code
+	GROUP BY
+		aircrafts.model
