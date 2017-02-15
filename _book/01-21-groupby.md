@@ -45,21 +45,21 @@ title: Группировка
 
 Выглядит более многословно, но группировка даёт дополнительные возможности. Например, можем посчитать сколько раз вообще летал самолёт по рейсу. Используем **агрегатную функцию** `COUNT`:
 
-```SQL
-SELECT
-  aircrafts.model,
-  flights.flight_no,
-  COUNT(*)
-FROM
-  bookings.flights
-  JOIN bookings.aircrafts
-    ON aircrafts.aircraft_code = flights.aircraft_code
-WHERE
-  aircrafts.model = 'Airbus A321-200'
-GROUP BY
-  aircrafts.model,
-  flights.flight_no
-```
+
+		SELECT
+		  aircrafts.model,
+		  flights.flight_no,
+		  COUNT(*)
+		FROM
+		  bookings.flights
+		  JOIN bookings.aircrafts
+		    ON aircrafts.aircraft_code = flights.aircraft_code
+		WHERE
+		  aircrafts.model = 'Airbus A321-200'
+		GROUP BY
+		  aircrafts.model,
+		  flights.flight_no
+
 
 И вывести дату и время отправления первого и последнего рейсов, занесённых в нашу базу. Давайте ещё вспомним про псевдонимы:
 
