@@ -79,42 +79,42 @@ title: Подзапросы
 
 Добавим сюда информацию о количестве выданных посадочных талонов на рейсы:
 
-  WITH
-    tickets_count AS
-      (
-        SELECT
-          ticket_flights.flight_id,
-          count(*) "Билетов"
-        FROM
-          bookings.ticket_flights
-        GROUP BY
-          ticket_flights.flight_id
-      ),
-    passes_count AS
-      (
-        SELECT
-          boarding_passes.flight_id,
-          count(*) "Посадочных талонов"
-        FROM
-          bookings.boarding_passes
-        GROUP BY
-          boarding_passes.flight_id
-      )
-  SELECT
-    flights.flight_id,
-    flights.flight_no,
-    flights.scheduled_departure,
-    flights.aircraft_code,
-    tickets_count."Билетов",
-    passes_count."Посадочных талонов"
-  FROM
-    bookings.flights
-    JOIN tickets_count
-      ON tickets_count.flight_id=flights.flight_id
-    JOIN passes_count
-      ON passes_count.flight_id=flights.flight_id
-  WHERE
-    departure_airport='ROV'
+    WITH
+      tickets_count AS
+        (
+          SELECT
+            ticket_flights.flight_id,
+            count(*) "Билетов"
+          FROM
+            bookings.ticket_flights
+          GROUP BY
+            ticket_flights.flight_id
+        ),
+      passes_count AS
+        (
+          SELECT
+            boarding_passes.flight_id,
+            count(*) "Посадочных талонов"
+          FROM
+            bookings.boarding_passes
+          GROUP BY
+            boarding_passes.flight_id
+        )
+    SELECT
+      flights.flight_id,
+      flights.flight_no,
+      flights.scheduled_departure,
+      flights.aircraft_code,
+      tickets_count."Билетов",
+      passes_count."Посадочных талонов"
+    FROM
+      bookings.flights
+      JOIN tickets_count
+        ON tickets_count.flight_id=flights.flight_id
+      JOIN passes_count
+        ON passes_count.flight_id=flights.flight_id
+    WHERE
+      departure_airport='ROV'
 
 Количество посадочных талонов совпадает с количеством билетов на рейс, если все пассажиры прошли регистрацию.
 
