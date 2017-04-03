@@ -3,8 +3,7 @@ layout: default
 ---
 
 <article class="post">
-  <h1>{{ page.title }}</h1>
-
+  <h2>Учебник</h2>
   <div>
     <a href="/book/">Оглавление</a>
   </div>
@@ -16,6 +15,8 @@ layout: default
       <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
     {% endif %}
   </div>
+
+  <h2>{{ page.title }}</h2>
 
   <div class="entry">
     {{ content }}
