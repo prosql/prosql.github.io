@@ -52,7 +52,7 @@ title: Сортировка результата
       (range > 6000) DESC,
       model DESC
 
-Фраза `ORDER BY` ставится после фразы `WHERE`:
+Фраза `ORDER BY` ставится после фраз `WHERE` и `GROUP BY`:
 
     SELECT *
     FROM bookings.aircrafts
