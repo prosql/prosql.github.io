@@ -30,19 +30,19 @@ title: Сортировка результата
 
 Чтобы изменить порядок сортировки после выражения ставится слово `DESC`:
 
-  SELECT *
-  FROM bookings.aircrafts
-  ORDER BY
-    (range > 6000) DESC,
-    model
+    SELECT *
+    FROM bookings.aircrafts
+    ORDER BY
+      (range > 6000) DESC,
+      model
 
 выведет сначала самолёты с дальностью более 6000 км.
 
-  SELECT *
-  FROM bookings.aircrafts
-  ORDER BY
-    (range > 6000),
-    model DESC
+    SELECT *
+    FROM bookings.aircrafts
+    ORDER BY
+      (range > 6000),
+      model DESC
 
 отсортирует модели в обратном порядке. Можно использовать `DESC` в обоих выражениях:
 
