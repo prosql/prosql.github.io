@@ -7,8 +7,8 @@ title: Введение в базы данных и SQL
 
 Пример конструкции на языке SQL:
 
-	 SELECT region_code, name
-	 FROM cities
+    SELECT region_code, name
+    FROM cities
 
 В [реляционных базах данных](https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BB%D1%8F%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D0%B1%D0%B0%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85) данные размещены в **таблицах** (*table*). Таблицы состоят из **записей** (строк), имеющих свой набор **полей** (колонок) для каждой из таблиц. В нашем случае в таблице `cities` есть поля `region_code` и `name`.
 
