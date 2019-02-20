@@ -1,0 +1,40 @@
+---
+layout: post
+title: Проверка ИНН
+---
+
+Нужно проверить корректность российского ИНН.ё
+
+#### Решение для PostgreSQL
+
+  with a as (
+		  select (regexp_split_to_array(inn, '\s*'))::int[] a, length(inn) l
+		)
+		, k as (
+		  select 
+		  row_number() over () rn
+		  ,p::int + 1  k2
+		  ,(lead(p,1) over ())::int + 1 k1
+		  ,(lead(p,2) over ())::int + 1 k0
+		  from regexp_split_to_table('26139248357',E'\\s*') p
+		)
+		, m as (
+		  select 
+		  k.*, 
+		  a.a[k.rn] v
+		  from k, a
+		)
+		, v as (
+		  select 
+		  mod(mod(sum(k2*v), 11) ,10) s2,
+		  mod(mod(sum(k1*v), 11) ,10) s1,
+		  mod(mod(sum(k0*v), 11) ,10) s0
+		  from m
+		)
+		select
+		case 
+			when a.l = 10 then v.s0 = a.a[10]
+			when a.l = 12 then v.s1 = a.a[11] and v.s2 = a.a[12]
+			else false
+		end r
+		from v, a
