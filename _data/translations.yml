@@ -1,0 +1,17 @@
+en:
+  site_name: "Pro SQL"
+  site_description: "A blog about everything related to databases"
+  nav_book: "Textbook"
+  nav_about: "About"
+
+bg:
+  site_name: "Про SQL"
+  site_description: "Блог за всичко, свързано със СУБД"
+  nav_book: "Учебник"
+  nav_about: "За проекта"
+
+ru:
+  site_name: "Про SQL"
+  site_description: "Блог обо всём, что касается СУБД"
+  nav_book: "Учебник"
+  nav_about: "О проекте"

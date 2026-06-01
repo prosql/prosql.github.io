@@ -1,7 +1,12 @@
+{% if site.active_lang %}
+  {% assign t = site.data.translations[site.active_lang] %}
+{% else %}
+  {% assign t = site.data.translations[site.default_lang] %}
+{% endif %}
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ t.site_name }} – {{ t.site_description }}</title>
 
     {% include meta.html %}
 
@@ -10,7 +15,7 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="{{ t.site_name }} - {{ t.site_description }}" href="{{ site.baseurl }}/feed.xml" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
@@ -22,13 +27,13 @@
           <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
 
           <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
+            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ t.site_name }}</a></h1>
+            <p class="site-description">{{ t.site_description }}</p>
           </div>
 
           <nav>
-            <a href="{{ site.baseurl }}/book">Учебник</a>
-            <a href="{{ site.baseurl }}/about">О проекте</a>
+            <a href="{{ site.baseurl }}/book">{{ t.nav_book }}</a>
+            <a href="{{ site.baseurl }}/about">{{ t.nav_about }}</a>
           </nav>
 
           <div class="language-selector">
@@ -37,16 +42,13 @@
               {% for lang in site.languages %}
                 {% if lang == site.default_lang %}
                   {% assign lang_url = site.baseurl | append: page.url %}
-                  {% assign is_selected = false %}
-                  {% if page.lang == lang or page.lang == '' or page.lang == nil %}
-                    {% assign is_selected = true %}
-                  {% endif %}
                 {% else %}
                   {% assign lang_url = site.baseurl | append: '/' | append: lang | append: page.url %}
+                {% endif %}
+                {% if site.active_lang == lang %}
+                  {% assign is_selected = true %}
+                {% else %}
                   {% assign is_selected = false %}
-                  {% if page.lang == lang %}
-                    {% assign is_selected = true %}
-                  {% endif %}
                 {% endif %}
                 <option value="{{ lang_url }}" {% if is_selected %}selected{% endif %}>{% if lang == 'en' %}English{% elsif lang == 'bg' %}Български{% elsif lang == 'ru' %}Русский{% endif %}</option>
               {% endfor %}
