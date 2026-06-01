@@ -2,6 +2,12 @@
 layout: default
 ---
 
+{% if site.active_lang %}
+  {% assign t = site.data.translations[site.active_lang] %}
+{% else %}
+  {% assign t = site.data.translations[site.default_lang] %}
+{% endif %}
+
 <div class="posts">
   {% for post in site.posts %}
     <article class="post">
@@ -12,7 +18,7 @@ layout: default
         {{ post.excerpt }}
       </div>
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Читать...</a>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">{{ t.read_more }}</a>
     </article>
   {% endfor %}
 

@@ -4,6 +4,8 @@ en:
   nav_book: "Textbook"
   nav_about: "About"
   toc: "Table of Contents"
+  read_more: "Read more..."
+  published: "Published"
 
 bg:
   site_name: "Про SQL"
@@ -11,6 +13,8 @@ bg:
   nav_book: "Учебник"
   nav_about: "За проекта"
   toc: "Съдържание"
+  read_more: "Прочети..."
+  published: "Публикувано"
 
 ru:
   site_name: "Про SQL"
@@ -18,3 +22,5 @@ ru:
   nav_book: "Учебник"
   nav_about: "О проекте"
   toc: "Оглавление"
+  read_more: "Читать..."
+  published: "Опубликовано"
