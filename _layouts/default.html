@@ -36,12 +36,19 @@
             <select id="lang-select" onchange="window.location.href=this.value" class="lang-dropdown">
               {% for lang in site.languages %}
                 {% if lang == site.default_lang %}
-                  <option value="{{ site.baseurl }}/" {% if page.lang == lang %}selected{% endif %}>
+                  {% assign lang_url = site.baseurl | append: page.url %}
+                  {% assign is_selected = false %}
+                  {% if page.lang == lang or page.lang == '' or page.lang == nil %}
+                    {% assign is_selected = true %}
+                  {% endif %}
                 {% else %}
-                  <option value="{{ site.baseurl }}/{{ lang }}/" {% if page.lang == lang %}selected{% endif %}>
+                  {% assign lang_url = site.baseurl | append: '/' | append: lang | append: page.url %}
+                  {% assign is_selected = false %}
+                  {% if page.lang == lang %}
+                    {% assign is_selected = true %}
+                  {% endif %}
                 {% endif %}
-                  {% if lang == 'en' %}English{% elsif lang == 'bg' %}Български{% elsif lang == 'ru' %}Русский{% endif %}
-                </option>
+                <option value="{{ lang_url }}" {% if is_selected %}selected{% endif %}>{% if lang == 'en' %}English{% elsif lang == 'bg' %}Български{% elsif lang == 'ru' %}Русский{% endif %}</option>
               {% endfor %}
             </select>
           </div>
