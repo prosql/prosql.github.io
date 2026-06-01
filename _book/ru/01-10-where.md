@@ -1,7 +1,9 @@
 ---
+lang: ru
 layout: article
 title: Условия
 ---
+lang: ru
 
 Дальше для примеров буду использовать учебную базу [Полёты](https://edu.postgrespro.ru/bookings.pdf).
 

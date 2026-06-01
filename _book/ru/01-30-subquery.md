@@ -1,7 +1,9 @@
 ---
+lang: ru
 layout: article
 title: Подзапросы
 ---
+lang: ru
 Выведем все рейсы из Ростова:
 
     SELECT

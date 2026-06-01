@@ -1,7 +1,9 @@
 ---
+lang: ru
 layout: article
 title: Нестрогое соединение
 ---
+lang: ru
 Возможно, вы заметили, что запрос
 
     WITH
