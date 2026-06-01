@@ -30,6 +30,15 @@
             <a href="{{ site.baseurl }}/book">Учебник</a>
             <a href="{{ site.baseurl }}/about">О проекте</a>
           </nav>
+
+          <div class="language-selector">
+            <label for="lang-select" class="sr-only">Select Language</label>
+            <select id="lang-select" onchange="window.location.href=this.value" class="lang-dropdown">
+              <option value="/en/" {% if page.lang == 'en' %}selected{% endif %}>English</option>
+              <option value="/bg/" {% if page.lang == 'bg' %}selected{% endif %}>Български</option>
+              <option value="/ru/" {% if page.lang == 'ru' %}selected{% endif %}>Русский</option>
+            </select>
+          </div>
         </header>
       </div>
     </div>
