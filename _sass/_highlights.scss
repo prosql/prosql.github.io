@@ -1,5 +1,5 @@
 
-.highlight {
+div.highlight {
   background-color: #efefef;
   padding: 7px 7px 7px 10px;
   border: 1px solid #ddd;
@@ -7,7 +7,19 @@
   -webkit-box-shadow: 3px 3px rgba(0,0,0,0.1);
   box-shadow: 3px 3px rgba(0,0,0,0.1);
   margin: 20px 0 20px 0;
-  overflow: scroll;
+  overflow: auto;
+}
+
+// Rouge wraps highlighted code in <div class="highlight"><pre class="highlight">...
+// The inner <pre> shares the class, so strip its frame/background to avoid a
+// double border/background.
+pre.highlight {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
 }
 
 code {

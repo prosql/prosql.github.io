@@ -2,10 +2,22 @@
 layout: default
 ---
 
+{% if site.active_lang %}
+  {% assign t = site.data.translations[site.active_lang] %}
+{% else %}
+  {% assign t = site.data.translations[site.default_lang] %}
+{% endif %}
+
+{% if site.active_lang and site.active_lang != site.default_lang %}
+  {% assign book_url = '/' | append: site.active_lang | append: '/book/' %}
+{% else %}
+  {% assign book_url = '/book/' %}
+{% endif %}
+
 <article class="post">
-  <h1>Учебник</h1>
+  <h1>{{ t.nav_book }}</h1>
   <div>
-    <a href="/book/">Оглавление</a>
+    <a href="{{ book_url }}">{{ t.toc }}</a>
   </div>
   <div class="PageNavigation">
     {% if page.previous.url %}
