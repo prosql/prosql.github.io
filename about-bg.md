@@ -1,6 +1,7 @@
 ---
 layout: page
 title: За сайта
+permalink: /about/
 lang: bg
 ---
 

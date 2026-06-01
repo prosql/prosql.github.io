@@ -1,6 +1,7 @@
 ---
 layout: page
 title: О проекте
+permalink: /about/
 lang: ru
 ---
 
