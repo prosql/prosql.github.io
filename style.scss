@@ -313,6 +313,14 @@ code {
   background-color: #efefef;
 }
 
+// The global background above is intended for inline <code>. Inside a <pre>
+// (i.e. a fenced/indented code block) the wrapper div.highlight already
+// provides the background, so reset the inner <code> to avoid a nested box.
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
 // Language selector styles
 .language-selector {
   display: inline-block;
