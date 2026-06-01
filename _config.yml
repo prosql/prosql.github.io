@@ -95,4 +95,4 @@ exclude:
 collections:
   book:
     output: true
-    permalink: /book/:path/
+    permalink: /book/:name/

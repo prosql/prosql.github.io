@@ -1,13 +1,13 @@
 ---
 layout: page
-title: О проекте
+title: About
 permalink: /about/
 lang: en
 ---
 
-Автор долгое время занимается разработкой, внедрением и сопровождением информационных систем. И вот, наконец, решил в этом блоге делиться накопленными при этом знаниями.
-Надеюсь, кому-то это будет полезным.
+The author has been involved in the development, implementation, and maintenance of information systems for many years. Finally decided to share the knowledge accumulated along the way in this blog.
+Hope someone finds it useful.
 
-### Об авторе
+### About the author
 
 [egno.github.io](https://egno.github.io/about)

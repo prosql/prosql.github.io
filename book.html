@@ -1,14 +1,18 @@
 ---
 layout: default
 ---
+{% if site.active_lang %}
+  {% assign t = site.data.translations[site.active_lang] %}
+{% else %}
+  {% assign t = site.data.translations[site.default_lang] %}
+{% endif %}
 
-<h1>Оглавление</h1>
+<h1>{{ t.toc }}</h1>
 
 <div class="posts">
-	<ul>
-
-  {% for page in site.book %}
+  <ul>
+    {% for page in site.book %}
       <li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
-  {% endfor %}
-  	</ul>
+    {% endfor %}
+  </ul>
 </div>
