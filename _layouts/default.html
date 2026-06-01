@@ -33,12 +33,21 @@
 
           <div class="language-selector">
             <label for="lang-select" class="sr-only">Select Language</label>
-            <select id="lang-select" onchange="window.location.href=this.value" class="lang-dropdown">
-              <option value="/en/" {% if page.lang == 'en' %}selected{% endif %}>English</option>
-              <option value="/bg/" {% if page.lang == 'bg' %}selected{% endif %}>Български</option>
-              <option value="/ru/" {% if page.lang == 'ru' %}selected{% endif %}>Русский</option>
+            <select id="lang-select" onchange="changeLanguage(this.value)" class="lang-dropdown">
+              {% for lang in site.languages %}
+                {% capture lang_url %}{% polyglot_alternate_urls %}{{ lang }}{% endpolyglot_alternate_urls %}{% endcapture %}
+                <option value="{% if lang == 'en' %}{{ site.baseurl }}/{% else %}{{ site.baseurl }}/{{ lang }}/{% endif %}" {% if page.lang == lang %}selected{% endif %}>
+                  {% if lang == 'en' %}English{% elsif lang == 'bg' %}Български{% elsif lang == 'ru' %}Русский{% endif %}
+                </option>
+              {% endfor %}
             </select>
           </div>
+
+          <script>
+            function changeLanguage(url) {
+              if (url) window.location.href = url;
+            }
+          </script>
         </header>
       </div>
     </div>
