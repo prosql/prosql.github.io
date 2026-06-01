@@ -1,7 +1,7 @@
 en:
   site_name: "Pro SQL"
   site_description: "A blog about everything related to databases"
-  nav_book: "Textbook"
+  nav_book: "Book"
   nav_about: "About"
   toc: "Table of Contents"
   read_more: "Read more..."
