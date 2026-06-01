@@ -76,6 +76,7 @@ exclude_from_localization: ["/assets/", "/css/", "/js/", "sitemap.xml", "feed.xm
 
 polyglot:
   fallback_languages: ["en"]
+  parallel_localization: false
 
 # Plugins
 plugins:
