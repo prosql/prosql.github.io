@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: post
-title: Updates in the Textbook
+title: Updates in the Book
 ---
 
-Finished the [Textbook](../book)
+Finished the [Book](../book)
