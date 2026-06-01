@@ -79,6 +79,7 @@ polyglot:
 
 # Plugins
 plugins:
+  - jekyll-polyglot
   - jekyll-sitemap
   - jekyll-feed
 
