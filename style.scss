@@ -312,3 +312,41 @@ footer {
 code {
   background-color: #efefef;
 }
+
+// Language selector styles
+.language-selector {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.lang-dropdown {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.lang-dropdown:hover {
+  border-color: #999;
+}
+
+.lang-dropdown:focus {
+  outline: none;
+  border-color: #0077aa;
+  box-shadow: 0 0 0 2px rgba(0, 119, 170, 0.1);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
