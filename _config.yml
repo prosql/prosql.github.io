@@ -69,6 +69,14 @@ kramdown:
 sass:
   style: expanded
 
+# Language configuration for jekyll-polyglot
+languages: ["en", "bg", "ru"]
+default_lang: "en"
+exclude_from_localization: ["/assets/", "/css/", "/js/", "sitemap.xml", "feed.xml"]
+
+polyglot:
+  fallback_languages: ["en"]
+
 # Plugins
 plugins:
   - jekyll-sitemap
